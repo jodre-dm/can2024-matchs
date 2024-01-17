@@ -1,0 +1,437 @@
+[
+   {
+      "team1":{
+         "name":"Burkina Faso",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/bfa.d9ad48ca.png"
+      },
+      "team2":{
+         "name":"Mauritanie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/mrt.15797402.png"
+      },
+      "date":"mardi 16 janvier 2024",
+      "hour":"15:00",
+      "game-details-url":"https://www.footmercato.net/live/7962838748604114049-burkina-faso-vs-mauritanie",
+      "iso-datetime":"2024-01-16T15:00:00+01:00",
+      "channel":"beIN Sports 1HD"
+   },
+   {
+      "team1":{
+         "name":"Tunisie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/tun.3775353f.png"
+      },
+      "team2":{
+         "name":"Namibie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/nam.b0c0670e.png"
+      },
+      "date":"mardi 16 janvier 2024",
+      "hour":"18:00",
+      "game-details-url":"https://www.footmercato.net/live/1466574062865116175-tunisie-vs-namibie",
+      "iso-datetime":"2024-01-16T18:00:00+01:00",
+      "channel":"beIN Sports 2HD"
+   },
+   {
+      "team1":{
+         "name":"Mali",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/mli.b4d87243.png"
+      },
+      "team2":{
+         "name":"Afrique du Sud",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/zaf.8b7b6852.png"
+      },
+      "date":"mardi 16 janvier 2024",
+      "hour":"21:00",
+      "game-details-url":"https://www.footmercato.net/live/3388964561428375177-mali-vs-afrique-du-sud",
+      "iso-datetime":"2024-01-16T21:00:00+01:00",
+      "channel":"beIN Sports 2HD"
+   },
+   {
+      "team1":{
+         "name":"Maroc",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/mar.133fe38d.png"
+      },
+      "team2":{
+         "name":"Tanzanie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/tza.ff50eb47.png"
+      },
+      "date":"mercredi 17 janvier 2024",
+      "hour":"18:00",
+      "game-details-url":"https://www.footmercato.net/live/8235584182105733888-maroc-vs-tanzanie",
+      "iso-datetime":"2024-01-17T18:00:00+01:00",
+      "channel":"beIN Sports 1HD"
+   },
+   {
+      "team1":{
+         "name":"Rép. Dém. Congo",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/cod.09192755.png"
+      },
+      "team2":{
+         "name":"Zambie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/zmb.5af77fcc.png"
+      },
+      "date":"mercredi 17 janvier 2024",
+      "hour":"21:00",
+      "game-details-url":"https://www.footmercato.net/live/8324895203218847245-rep-dem-congo-vs-zambie",
+      "iso-datetime":"2024-01-17T21:00:00+01:00",
+      "channel":"beIN Sports 1HD"
+   },
+   {
+      "team1":{
+         "name":"Guinée équat.",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/gnq.cc4f3930.png"
+      },
+      "team2":{
+         "name":"Guinée-Bissau",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/gnb.1f0f7ec2.png"
+      },
+      "date":"jeudi 18 janvier 2024",
+      "hour":"15:00",
+      "game-details-url":"https://www.footmercato.net/live/3599260303001380154-guinee-equatoriale-vs-guinee-bissau",
+      "iso-datetime":"2024-01-18T15:00:00+01:00",
+      "channel":"beIN Sports 1HD"
+   },
+   {
+      "team1":{
+         "name":"Côte d'Ivoire",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/civ.efc92db4.png"
+      },
+      "team2":{
+         "name":"Nigeria",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/nga.c404d351.png"
+      },
+      "date":"jeudi 18 janvier 2024",
+      "hour":"18:00",
+      "game-details-url":"https://www.footmercato.net/live/2214787470539244854-cote-divoire-vs-nigeria",
+      "iso-datetime":"2024-01-18T18:00:00+01:00",
+      "channel":"beIN Sports 2HD"
+   },
+   {
+      "team1":{
+         "name":"Égypte",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/egy.12a780b6.png"
+      },
+      "team2":{
+         "name":"Ghana",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/gha.03a485d3.png"
+      },
+      "date":"jeudi 18 janvier 2024",
+      "hour":"21:00",
+      "game-details-url":"https://www.footmercato.net/live/9051198359865360650-egypte-vs-ghana",
+      "iso-datetime":"2024-01-18T21:00:00+01:00",
+      "channel":"beIN Sports 2HD"
+   },
+   {
+      "team1":{
+         "name":"Cap-Vert",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/cpv.81a71cde.png"
+      },
+      "team2":{
+         "name":"Mozambique",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/moz.b6c82055.png"
+      },
+      "date":"vendredi 19 janvier 2024",
+      "hour":"15:00",
+      "game-details-url":"https://www.footmercato.net/live/4855224104425519313-cap-vert-vs-mozambique",
+      "iso-datetime":"2024-01-19T15:00:00+01:00",
+      "channel":"beIN Sports 1HD"
+   },
+   {
+      "team1":{
+         "name":"Sénégal",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/sen.255a1aaf.png"
+      },
+      "team2":{
+         "name":"Cameroun",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/cmr.995bcb69.png"
+      },
+      "date":"vendredi 19 janvier 2024",
+      "hour":"18:00",
+      "game-details-url":"https://www.footmercato.net/live/6581682657165980900-senegal-vs-cameroun",
+      "iso-datetime":"2024-01-19T18:00:00+01:00",
+      "channel":"beIN Sports 1HD"
+   },
+   {
+      "team1":{
+         "name":"Guinée",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/gin.5b676294.png"
+      },
+      "team2":{
+         "name":"Gambie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/gmb.40e9513b.png"
+      },
+      "date":"vendredi 19 janvier 2024",
+      "hour":"21:00",
+      "game-details-url":"https://www.footmercato.net/live/2237123446517253404-guinee-vs-gambie",
+      "iso-datetime":"2024-01-19T21:00:00+01:00",
+      "channel":"beIN Sports 2HD"
+   },
+   {
+      "team1":{
+         "name":"Algérie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/dza.c8b3765d.png"
+      },
+      "team2":{
+         "name":"Burkina Faso",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/bfa.d9ad48ca.png"
+      },
+      "date":"samedi 20 janvier 2024",
+      "hour":"15:00",
+      "game-details-url":"https://www.footmercato.net/live/4285771775458042981-algerie-vs-burkina-faso",
+      "iso-datetime":"2024-01-20T15:00:00+01:00",
+      "channel":"beIN Sports 2HD"
+   },
+   {
+      "team1":{
+         "name":"Mauritanie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/mrt.15797402.png"
+      },
+      "team2":{
+         "name":"Angola",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/ago.c0aff11c.png"
+      },
+      "date":"samedi 20 janvier 2024",
+      "hour":"18:00",
+      "game-details-url":"https://www.footmercato.net/live/4870389031951226073-mauritanie-vs-angola",
+      "iso-datetime":"2024-01-20T18:00:00+01:00",
+      "channel":"beIN Sports 2HD"
+   },
+   {
+      "team1":{
+         "name":"Tunisie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/tun.3775353f.png"
+      },
+      "team2":{
+         "name":"Mali",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/mli.b4d87243.png"
+      },
+      "date":"samedi 20 janvier 2024",
+      "hour":"21:00",
+      "game-details-url":"https://www.footmercato.net/live/1373042855516161961-tunisie-vs-mali",
+      "iso-datetime":"2024-01-20T21:00:00+01:00",
+      "channel":"beIN Sports 2HD"
+   },
+   {
+      "team1":{
+         "name":"Maroc",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/mar.133fe38d.png"
+      },
+      "team2":{
+         "name":"Rép. Dém. Congo",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/cod.09192755.png"
+      },
+      "date":"dimanche 21 janvier 2024",
+      "hour":"15:00",
+      "game-details-url":"https://www.footmercato.net/live/258140809507480289-maroc-vs-rep-dem-congo",
+      "iso-datetime":"2024-01-21T15:00:00+01:00",
+      "channel":"beIN Sports 2HD"
+   },
+   {
+      "team1":{
+         "name":"Zambie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/zmb.5af77fcc.png"
+      },
+      "team2":{
+         "name":"Tanzanie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/tza.ff50eb47.png"
+      },
+      "date":"dimanche 21 janvier 2024",
+      "hour":"18:00",
+      "game-details-url":"https://www.footmercato.net/live/4429504807587573735-zambie-vs-tanzanie",
+      "iso-datetime":"2024-01-21T18:00:00+01:00",
+      "channel":"beIN Sports 2HD"
+   },
+   {
+      "team1":{
+         "name":"Afrique du Sud",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/zaf.8b7b6852.png"
+      },
+      "team2":{
+         "name":"Namibie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/nam.b0c0670e.png"
+      },
+      "date":"dimanche 21 janvier 2024",
+      "hour":"21:00",
+      "game-details-url":"https://www.footmercato.net/live/360323275499008844-afrique-du-sud-vs-namibie",
+      "iso-datetime":"2024-01-21T21:00:00+01:00",
+      "channel":"beIN Sports 2HD"
+   },
+   {
+      "team1":{
+         "name":"Guinée-Bissau",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/gnb.1f0f7ec2.png"
+      },
+      "team2":{
+         "name":"Nigeria",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/nga.c404d351.png"
+      },
+      "date":"lundi 22 janvier 2024",
+      "hour":"18:00",
+      "game-details-url":"https://www.footmercato.net/live/5983855123411421448-guinee-bissau-vs-nigeria",
+      "iso-datetime":"2024-01-22T18:00:00+01:00",
+      "channel":"beIN Sports Max 4HD"
+   },
+   {
+      "team1":{
+         "name":"Guinée équat.",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/gnq.cc4f3930.png"
+      },
+      "team2":{
+         "name":"Côte d'Ivoire",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/civ.efc92db4.png"
+      },
+      "date":"lundi 22 janvier 2024",
+      "hour":"18:00",
+      "game-details-url":"https://www.footmercato.net/live/7539200937161041292-guinee-equatoriale-vs-cote-divoire",
+      "iso-datetime":"2024-01-22T18:00:00+01:00",
+      "channel":"beIN Sports 2HD"
+   },
+   {
+      "team1":{
+         "name":"Mozambique",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/moz.b6c82055.png"
+      },
+      "team2":{
+         "name":"Ghana",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/gha.03a485d3.png"
+      },
+      "date":"lundi 22 janvier 2024",
+      "hour":"21:00",
+      "game-details-url":"https://www.footmercato.net/live/7554980043904888643-mozambique-vs-ghana",
+      "iso-datetime":"2024-01-22T21:00:00+01:00",
+      "channel":"beIN Sports Max 4HD"
+   },
+   {
+      "team1":{
+         "name":"Cap-Vert",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/cpv.81a71cde.png"
+      },
+      "team2":{
+         "name":"Égypte",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/egy.12a780b6.png"
+      },
+      "date":"lundi 22 janvier 2024",
+      "hour":"21:00",
+      "game-details-url":"https://www.footmercato.net/live/5639471638655579856-cap-vert-vs-egypte",
+      "iso-datetime":"2024-01-22T21:00:00+01:00",
+      "channel":"beIN Sports 2HD"
+   },
+   {
+      "team1":{
+         "name":"Guinée",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/gin.5b676294.png"
+      },
+      "team2":{
+         "name":"Sénégal",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/sen.255a1aaf.png"
+      },
+      "date":"mardi 23 janvier 2024",
+      "hour":"18:00",
+      "game-details-url":"https://www.footmercato.net/live/3732200690953263328-guinee-vs-senegal",
+      "iso-datetime":"2024-01-23T18:00:00+01:00",
+      "channel":"beIN Sports 2HD"
+   },
+   {
+      "team1":{
+         "name":"Gambie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/gmb.40e9513b.png"
+      },
+      "team2":{
+         "name":"Cameroun",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/cmr.995bcb69.png"
+      },
+      "date":"mardi 23 janvier 2024",
+      "hour":"18:00",
+      "game-details-url":"https://www.footmercato.net/live/6704236383452397784-gambie-vs-cameroun",
+      "iso-datetime":"2024-01-23T18:00:00+01:00",
+      "channel":"beIN Sports Max 4HD"
+   },
+   {
+      "team1":{
+         "name":"Angola",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/ago.c0aff11c.png"
+      },
+      "team2":{
+         "name":"Burkina Faso",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/bfa.d9ad48ca.png"
+      },
+      "date":"mardi 23 janvier 2024",
+      "hour":"21:00",
+      "game-details-url":"https://www.footmercato.net/live/6477558888990616652-angola-vs-burkina-faso",
+      "iso-datetime":"2024-01-23T21:00:00+01:00",
+      "channel":"beIN Sports Max 4HD"
+   },
+   {
+      "team1":{
+         "name":"Mauritanie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/mrt.15797402.png"
+      },
+      "team2":{
+         "name":"Algérie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/dza.c8b3765d.png"
+      },
+      "date":"mardi 23 janvier 2024",
+      "hour":"21:00",
+      "game-details-url":"https://www.footmercato.net/live/7253247388436945293-mauritanie-vs-algerie",
+      "iso-datetime":"2024-01-23T21:00:00+01:00",
+      "channel":"beIN Sports 2HD"
+   },
+   {
+      "team1":{
+         "name":"Afrique du Sud",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/zaf.8b7b6852.png"
+      },
+      "team2":{
+         "name":"Tunisie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/tun.3775353f.png"
+      },
+      "date":"mercredi 24 janvier 2024",
+      "hour":"18:00",
+      "game-details-url":"https://www.footmercato.net/live/2026574973695734738-afrique-du-sud-vs-tunisie",
+      "iso-datetime":"2024-01-24T18:00:00+01:00",
+      "channel":"beIN Sports 2HD"
+   },
+   {
+      "team1":{
+         "name":"Namibie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/nam.b0c0670e.png"
+      },
+      "team2":{
+         "name":"Mali",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/mli.b4d87243.png"
+      },
+      "date":"mercredi 24 janvier 2024",
+      "hour":"18:00",
+      "game-details-url":"https://www.footmercato.net/live/5650582133746608973-namibie-vs-mali",
+      "iso-datetime":"2024-01-24T18:00:00+01:00",
+      "channel":"beIN Sports Max 4HD"
+   },
+   {
+      "team1":{
+         "name":"Tanzanie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/tza.ff50eb47.png"
+      },
+      "team2":{
+         "name":"Rép. Dém. Congo",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/cod.09192755.png"
+      },
+      "date":"mercredi 24 janvier 2024",
+      "hour":"21:00",
+      "game-details-url":"https://www.footmercato.net/live/1187955555791324064-tanzanie-vs-rep-dem-congo",
+      "iso-datetime":"2024-01-24T21:00:00+01:00",
+      "channel":"beIN Sports Max 4HD"
+   },
+   {
+      "team1":{
+         "name":"Zambie",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/zmb.5af77fcc.png"
+      },
+      "team2":{
+         "name":"Maroc",
+         "flag-url":"https://www.footmercato.net/build/images/flags-png/mar.133fe38d.png"
+      },
+      "date":"mercredi 24 janvier 2024",
+      "hour":"21:00",
+      "game-details-url":"https://www.footmercato.net/live/3954903548020413839-zambie-vs-maroc",
+      "iso-datetime":"2024-01-24T21:00:00+01:00",
+      "channel":"beIN Sports 2HD"
+   }
+]
