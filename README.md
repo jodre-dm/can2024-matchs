@@ -17,7 +17,7 @@ Le programme récupère les informations des matchs depuis le site Foot Mercato,
 1. Clonez le repository :
 
     ```bash
-    git clone https://github.com/votre-nom-utilisateur/can2024-matchs
+    git clone https://github.com/jodre-dm/can2024-matchs.git
     cd can2024-matchs
     ```
 
