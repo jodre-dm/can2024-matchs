@@ -17,10 +17,12 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 from datetime import datetime
-
 import locale
+
+#Récupération et formattage de la date et l'heure
 locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
 today = datetime.now().strftime("%A %d %B %Y")
+hour = datetime.now().strftime("%H:%M")
 
 
 def import_credentials(source_file:str, service_app:str):
@@ -28,13 +30,13 @@ def import_credentials(source_file:str, service_app:str):
         credentials_list = json.load(json_file)
         username = credentials_list['gmail']['username']
         password = credentials_list['gmail']['app-password']
-        return username, password
+    return username, password
 
 
 def import_match_list(source_file:str, service_app:str):
     with open(source_file, "r", encoding='utf-8') as json_file:
-            match_list = json.load(json_file)
-            return match_list
+        match_list = json.load(json_file)
+    return match_list
     
 
 def import_html_email(html_source_file:str):
@@ -43,15 +45,12 @@ def import_html_email(html_source_file:str):
     return html_content
 
 
-def custom_html(imported_html, match_list, today_date=today):
-    
-    events_html = []
-    
+def custom_html(imported_html, match_list, today_date=today):    
+    events_html = []    
     imported_html = imported_html.replace("\n", "")
 
     for match in match_list:
         match_date = match['date']  # Assurez-vous que cela est au format YYYY-MM-DD
-
         if match_date == today_date:
             team1 = match['team1']['name']
             team1_flag = match['team1']['flag-url']
@@ -61,6 +60,8 @@ def custom_html(imported_html, match_list, today_date=today):
             hour = match['hour']
             channel = match['channel']
             game_details_url = match['game-details-url']
+
+            #Paramétrage du style
             font_family = "font-family : system-ui,-apple-system,'Segoe U',Roboto,'Helvetica Neue',Arial,'Noto Sans','Liberation Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';"
             cta_font_style = "font-size: .9em; color: white;"
             cta_color_style = "background: #064534; border-radius: 50px; padding: .7em .2em; width: 100px;margin: 20px auto; "
@@ -85,8 +86,8 @@ def custom_html(imported_html, match_list, today_date=today):
                         </div>
                         """           
             
-            
-            events_html.append(match_html)
+            events_html.append(match_html) #On ajoute le match à la liste de tous les matchs du jour
+
     # html_content_with_events = imported_html.format("\n".join(events_html))
     html_content_with_events = imported_html.replace("{match_details}","\n".join(events_html))
     return html_content_with_events
@@ -100,7 +101,6 @@ def generate_html_file(customized_html):
 
 
 def send_email(sender, subject, message_body, receiver, attachment_source, username, password):
-
     # Paramètres du serveur SMTP Gmail
     smtp_server = 'smtp.gmail.com'
     smtp_port = 587
@@ -121,13 +121,13 @@ def send_email(sender, subject, message_body, receiver, attachment_source, usern
             part = MIMEBase("application", "octet-stream")
             part.set_payload(attachment.read())
             encoders.encode_base64(part)
-            filename = attachment_source.split('\\')[-1]
+            filename = attachment_source.split('/')[-1]
             part.add_header(
                 "Content-Disposition",
                 f"attachment; filename= {filename}",
         )
     except Exception as e:
-        print(f"Une erreur s'est produite : {e}")
+        print(f"Aucune pièce jointe")
         # print(f"Une erreur s'est produite : {e}")
         pass
    
@@ -149,45 +149,48 @@ def send_email(sender, subject, message_body, receiver, attachment_source, usern
     print(f"\nMessage sent to {receiver_name} ! \n")
 
 def main():
-
     #Récupération des paramètres d'authentification
-    source_file = "credentials\\app_password.json"
+    source_file = "credentials/app_password.json"
     service_app = "gmail"
     username, password = import_credentials(source_file, service_app)
+    
+    #Récupération du calendrier
     source_file = "calendrier.json"
-    html_source_file = ".\\email.html"
-    # html_source_file = ".\\email-test.html"
+    
+    #Création du mail
+    html_source_file = "./email.html"
     imported_html = import_html_email(html_source_file)
     match_list = import_match_list(source_file, service_app)
     customized_html = custom_html(imported_html, match_list)
     html_file = generate_html_file(customized_html)
-
-    #Récupération des détails du mail
-    sender = f"🌍 CAN 2024 🐘 🇨🇮 - Calendrier ⚽"
-    subject ="Programme de la journée !"
-    # receivers = [{'name':'Jodré','email':'djodre88@hotmail.com'}]   
-    
-    # sender = f"TEST TABLE"
-    # subject ="TEST"
-    # receivers = [{'name':'Jodré','email':'djodre88@hotmail.com'}]
-
     recipients =""
-
-    receivers = [
-        {'name':'Jodré','email':'djodre88@hotmail.com'},
-        {'name':'Abdoulaye','email':'ablos_1@hotmail.com'},
-        {'name':'Jado','email':'jzoukra@gmail.com'},
-        {'name':'Meriem','email':'haddache92@gmail.com'},
-        {'name':'Vanneck','email':'sabyvanneck@gmail.com'},
-        {'name':'Oumar','email':'oumardrame091@gmail.com'},
-        {'name':'Précilia','email':'mavinga.liya@gmail.com'},
-        {'name':'Vincent','email':'vincent.enyeka@gmail.com'},
-        {'name':'Jean-Marc','email':'jean.marc.mukuta@gmail.com'},
-        {'name':'Yves','email':'yves.mavindi@gmail.com'}
-    ]
-    
     message_body = customized_html
-
+    
+    #Paramétrage des créneaux d'envoi
+    dev_timeslots = ["00:01", "06:30", "14:50", "17:50", "20:50"]
+    run_timeslots = ["09:00"]
+    
+    #Choix des destinataires en fonction de l'heure
+    if hour in dev_timeslots:
+        sender = f"🌍 CAN 2024 🐘 🇨🇮 - Calendrier ⚽"
+        subject ="MODE DEV - Mail checking"
+        receivers = [{'name':'Jodré','email':'djodre88@hotmail.com'}]
+    if hour in run_timeslots:
+        sender = f"🌍 CAN 2024 🐘 🇨🇮 - Calendrier ⚽"
+        subject ="Programme de la journée !"
+        receivers = [
+            {'name':'Jodré','email':'djodre88@hotmail.com'},
+            {'name':'Abdoulaye','email':'ablos_1@hotmail.com'},
+            {'name':'Jado','email':'jzoukra@gmail.com'},
+            {'name':'Meriem','email':'haddache92@gmail.com'},
+            {'name':'Vanneck','email':'sabyvanneck@gmail.com'},
+            {'name':'Oumar','email':'oumardrame091@gmail.com'},
+            {'name':'Précilia','email':'mavinga.liya@gmail.com'},
+            {'name':'Vincent','email':'vincent.enyeka@gmail.com'},
+            {'name':'Jean-Marc','email':'jean.marc.mukuta@gmail.com'},
+            {'name':'Yves','email':'yves.mavindi@gmail.com'}
+        ]
+    
     try:
         if receivers:  # Vérifie si la liste n'est pas vide
             for receiver in receivers:
@@ -196,7 +199,7 @@ def main():
             print("La liste des destinataires est vide.")
     except Exception as e:
         print(f"Une erreur s'est produite : {e}")
-
+   
 
 if __name__ == "__main__":
     main()
