@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAN 2024</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Nabla&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --bs-body-font-family : system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            /* font-family: Arial, Helvetica, sans-serif; */
+            font-family: var(--bs-body-font-family) ;
+
+            background: linear-gradient(90deg, #f78000, #009f60);    
+            /* background: #009f60;     */
+        }
+
+        .email-container {
+            max-width: 80vw;
+            margin: auto;
+            margin-top: 13vw;
+            padding: 20px;
+            background-color: rgb(255, 255, 255); /* Fond blanc */
+            /* border-radius: 8px; */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* height: 80vh; */
+        }
+
+        .headers {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1.2fr; 
+            grid-template-areas: "logo-left title logo-right";
+        }
+
+        .left{
+            grid-area: logo-left;
+            /* border: 1px solid black; */
+            background: url('https://upload.wikimedia.org/wikipedia/fr/thumb/f/f7/CAN_-_Fr_-_Full_Colour.png/225px-CAN_-_Fr_-_Full_Colour.png') center/contain no-repeat;
+            background-size: 80%;
+        }
+
+        .right{
+            grid-area: logo-right;
+            /* border: 1px solid black; */
+            background: url('https://upload.wikimedia.org/wikipedia/fr/thumb/9/90/CAN2023.png/270px-CAN2023.png') center/contain no-repeat;
+        }
+
+        
+
+        .title {
+            grid-area : title;
+            width: 100%;
+        }
+        
+        .title-content {            
+            display: flex;
+            flex-direction: column;
+        }
+        
+        h1,h2,h3 {
+            text-align: center;
+            margin: 0;
+            /* padding: 5px; */
+        }
+
+        h1 {
+            font-size: 7.2vw;
+            font-family: var(--bs-body-font-family);
+            font-weight: bolder;
+            color: #064534;
+        }
+        
+        h2 {
+            font-size: 1.1em;
+            color: #009f60;
+        }
+
+        h3 {
+            font-size: 1em;
+        }
+
+
+        .content{
+            /* border: 1px solid black; */
+            padding: 4vh 5px;
+        }
+
+        p {
+            text-align: center;
+            margin: 5px;
+        }
+
+        .match-info {
+            padding: 2em auto 1em;
+        }
+
+        .cta-infos {
+            background: rgb(6, 69, 52);
+            border-radius: 50px;
+            padding: .5em;
+            width: 100px;
+            margin: 20px auto;
+            font-size: .9em;
+            color: white;
+        }
+
+        .source-infos {
+            font-size: .7em;
+            font-style: italic;
+        }
+
+        a{
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .matchTeam__logo {
+            max-width: 16px;
+            margin-right: 3px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="headers">
+            <div class="headers logo left">
+                <!-- <img src="assets/logo-caf.jpeg" id="logo-caf" alt="logo caf"> -->
+            </div>
+            <div class="title">
+                <div class="title-content">
+                    <h1>CAN 2023</h1>
+                    <h2>Côte d'Ivoire</h2>
+                </div>
+            </div>
+            <div class="headers logo right">
+                <!-- <img src="assets/CAN2023.png" id="logo-can2024" alt="logo can"> -->
+            </div>            
+        </div>
+        <div class="content">
+            <br />
+            <h3>Salut {name} ! 👋</h3>
+            <br />
+            <h3>📅 Au programme aujourd'hui ⚽:</h3>
+            <br />
+            <hr />
+            {match_details}
+    </div>
+    </div>
+</body>
+</html>
