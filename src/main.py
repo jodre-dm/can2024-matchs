@@ -16,7 +16,7 @@ from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-from datetime import datetime
+from datetime import datetime, timedelta
 import locale
 
 #Récupération et formattage de la date et l'heure
@@ -94,7 +94,7 @@ def custom_html(imported_html, match_list, today_date=today):
 
 
 def generate_html_file(customized_html):
-    with open(f"generated_html_email_{today}.html", "w", encoding="utf-8") as html_file:
+    with open(f"generated/generated_html_email_{today}.html", "w", encoding="utf-8") as html_file:
         html_file.write(customized_html)
         print("Fichier HTML enregistré avec succès.")
         return html_file
@@ -148,19 +148,20 @@ def send_email(sender, subject, message_body, receiver, attachment_source, usern
         server.sendmail(username, receiver_email, msg.as_string())
     print(f"\nMessage sent to {receiver_name} ! \n")
 
+
 def main():
     #Récupération des paramètres d'authentification
-    source_file = "credentials/app_password.json"
+    credential_source_file = "credentials/app_password.json"
     service_app = "gmail"
-    username, password = import_credentials(source_file, service_app)
+    username, password = import_credentials(credential_source_file, service_app)
     
     #Récupération du calendrier
-    source_file = "calendrier.json"
+    calendar_source_file = "data/can-calendrier-poules.json"
     
     #Création du mail
-    html_source_file = "./email.html"
+    html_source_file = "templates/email.html"
     imported_html = import_html_email(html_source_file)
-    match_list = import_match_list(source_file, service_app)
+    match_list = import_match_list(calendar_source_file, service_app)
     customized_html = custom_html(imported_html, match_list)
     html_file = generate_html_file(customized_html)
     recipients =""
