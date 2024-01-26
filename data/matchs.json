@@ -1,0 +1,122 @@
+[
+    {
+        "team1": {
+            "name": "Nigeria",
+            "country-code": "NG"
+        },
+        "team2": {
+            "name": "Cameroun",
+            "country-code": "CM"
+        },
+        "date": "Aujourd'hui",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 1"
+    },
+    {
+        "team1": {
+            "name": "Nigeria",
+            "country-code": "NG"
+        },
+        "team2": {
+            "name": "Cameroun",
+            "country-code": "CM"
+        },
+        "date": "Aujourd'hui",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 1"
+    },
+    {
+        "team1": {
+            "name": "Egypte",
+            "country-code": "EG"
+        },
+        "team2": {
+            "name": "RD Congo",
+            "country-code": "CD"
+        },
+        "date": "dimanche 28 janvier 2024",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 2"
+    },
+    {
+        "team1": {
+            "name": "Egypte",
+            "country-code": "EG"
+        },
+        "team2": {
+            "name": "RD Congo",
+            "country-code": "CD"
+        },
+        "date": "dimanche 28 janvier 2024",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 2"
+    },
+    {
+        "team1": {
+            "name": "S\u00e9n\u00e9gal",
+            "country-code": "SN"
+        },
+        "team2": {
+            "name": "C\u00f4te d'ivoire",
+            "country-code": "CI"
+        },
+        "date": "lundi 29 janvier 2024",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 1"
+    },
+    {
+        "team1": {
+            "name": "S\u00e9n\u00e9gal",
+            "country-code": "SN"
+        },
+        "team2": {
+            "name": "C\u00f4te d'ivoire",
+            "country-code": "CI"
+        },
+        "date": "lundi 29 janvier 2024",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 1"
+    },
+    {
+        "team1": {
+            "name": "Maroc",
+            "country-code": "MA"
+        },
+        "team2": {
+            "name": "Afrique du Sud",
+            "country-code": "ZA"
+        },
+        "date": "mardi 30 janvier 2024",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 1"
+    },
+    {
+        "team1": {
+            "name": "Maroc",
+            "country-code": "MA"
+        },
+        "team2": {
+            "name": "Afrique du Sud",
+            "country-code": "ZA"
+        },
+        "date": "mardi 30 janvier 2024",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 1"
+    }
+]

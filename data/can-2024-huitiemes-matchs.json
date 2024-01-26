@@ -1,0 +1,138 @@
+[
+    {
+        "team1": {
+            "name": "Nigeria",
+            "country-code": "NG",
+            "flag-url": "https://flagcdn.com/w80/ng.png"
+        },
+        "team2": {
+            "name": "Cameroun",
+            "country-code": "CM",
+            "flag-url": "https://flagcdn.com/w80/cm.png"
+        },
+        "date": "Aujourd'hui",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 1"
+    },
+    {
+        "team1": {
+            "name": "Nigeria",
+            "country-code": "NG",
+            "flag-url": "https://flagcdn.com/w80/ng.png"
+        },
+        "team2": {
+            "name": "Cameroun",
+            "country-code": "CM",
+            "flag-url": "https://flagcdn.com/w80/cm.png"
+        },
+        "date": "Aujourd'hui",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 1"
+    },
+    {
+        "team1": {
+            "name": "Egypte",
+            "country-code": "EG",
+            "flag-url": "https://flagcdn.com/w80/eg.png"
+        },
+        "team2": {
+            "name": "RD Congo",
+            "country-code": "CD",
+            "flag-url": "https://flagcdn.com/w80/cd.png"
+        },
+        "date": "dimanche 28 janvier 2024",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 2"
+    },
+    {
+        "team1": {
+            "name": "Egypte",
+            "country-code": "EG",
+            "flag-url": "https://flagcdn.com/w80/eg.png"
+        },
+        "team2": {
+            "name": "RD Congo",
+            "country-code": "CD",
+            "flag-url": "https://flagcdn.com/w80/cd.png"
+        },
+        "date": "dimanche 28 janvier 2024",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 2"
+    },
+    {
+        "team1": {
+            "name": "S\u00e9n\u00e9gal",
+            "country-code": "SN",
+            "flag-url": "https://flagcdn.com/w80/sn.png"
+        },
+        "team2": {
+            "name": "C\u00f4te d'ivoire",
+            "country-code": "CI",
+            "flag-url": "https://flagcdn.com/w80/ci.png"
+        },
+        "date": "lundi 29 janvier 2024",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 1"
+    },
+    {
+        "team1": {
+            "name": "S\u00e9n\u00e9gal",
+            "country-code": "SN",
+            "flag-url": "https://flagcdn.com/w80/sn.png"
+        },
+        "team2": {
+            "name": "C\u00f4te d'ivoire",
+            "country-code": "CI",
+            "flag-url": "https://flagcdn.com/w80/ci.png"
+        },
+        "date": "lundi 29 janvier 2024",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 1"
+    },
+    {
+        "team1": {
+            "name": "Maroc",
+            "country-code": "MA",
+            "flag-url": "https://flagcdn.com/w80/ma.png"
+        },
+        "team2": {
+            "name": "Afrique du Sud",
+            "country-code": "ZA",
+            "flag-url": "https://flagcdn.com/w80/za.png"
+        },
+        "date": "mardi 30 janvier 2024",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 1"
+    },
+    {
+        "team1": {
+            "name": "Maroc",
+            "country-code": "MA",
+            "flag-url": "https://flagcdn.com/w80/ma.png"
+        },
+        "team2": {
+            "name": "Afrique du Sud",
+            "country-code": "ZA",
+            "flag-url": "https://flagcdn.com/w80/za.png"
+        },
+        "date": "mardi 30 janvier 2024",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 1"
+    }
+]
