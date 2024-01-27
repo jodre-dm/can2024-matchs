@@ -2,71 +2,110 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 import locale
+import json
+import os
 
 
-CAN = "afrique/coupe-dafrique-des-nations"
-LIGUE1 = "france/ligue-1"
-CHAMPIONS_LEAGUE = "europe/ligue-des-champions-uefa"
-URL_BASE = f"https://www.footmercato.net/programme-tv/"
+sites_sources = {}
+
+TV_SPORTS_URL_BASE = "https://tv-sports.fr/foot/"
+
+CAN = "coupe-d-afrique-des-nations_tv/match-direct"
+LIGUE1 = "ligue-1_tv/match-direct"
+PREMIER_LEAGUE = "premier-league_tv/match-direct"
+CHAMPIONS_LEAGUE = "ligue-des-champions_tv/match-direct"
 
 # Définir la locale en français
 locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
 
-def get_site_content(competition):
-    url = f"{URL_BASE}{competition}"
-    response = requests.get(url)
+def get_site_content(competition, url_base):
+    url = f"{url_base}{competition}"
+    headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',
+}
+    response = requests.get(url, headers=headers)
     html = response.content
     site_content = BeautifulSoup(html, 'html.parser')
     return site_content
 
-
-def get_match_list(site_content):
-    games = site_content.find_all('div', attrs={'matchBroadcast'})
-    i=0
-    match_list = []
-    for game in games:
-        # if i<3:
-        #     pass
-        # else:
-            game_details_endpoint = game.find('a', attrs={'matchBroadcast__link'}).get('href')
-            game_details_url = f"https://www.footmercato.net{game_details_endpoint}"
-            teams = game.find_all("span", attrs={'matchBroadcast__teams'})
-            team1_name = teams[0].contents[1].text.strip('\n')
-            team1_flag_url = teams[0].contents[1].contents[1].contents[1].attrs['data-src']
-            teams[0].contents[1].contents[1].contents[1]
-            team2_name = teams[0].contents[3].text.strip('\n')
-            team2_flag_url = teams[0].contents[3].contents[1].contents[1].attrs['data-src']
-            iso_datetime = game.contents[1].contents[1].contents[0].contents[1].attrs['datetime']
-            original_date = datetime.fromisoformat(iso_datetime)
-            # Ajouter une heure
-            new_date = original_date + timedelta(hours=1)
-            # Convertir la nouvelle date en string
-            new_date_string = new_date.isoformat().replace('+00:00', '+01:00')
-            # Convertir en objet datetime
-            date_obj = datetime.fromisoformat(new_date_string)
-            formatted_date = date_obj.strftime('%A %d %B %Y, %H:%M')
-            channel = game.contents[3].contents[1].text
-
+def get_matchs_list(site_content):
+    matchs_list = []
+    competition = site_content.h3
+    all_matchs = competition.next_sibling
+    for element in all_matchs.contents:
+        if element.name == "h4":
+            date = element.text
+            if "Aujourd'hui" in date:
+                date = datetime.now().strftime("%A %d %B %Y")
+            match_dict = {}
+        elif element.name == "div":
+            match_elements = element.contents
+            teams = match_elements[0].contents[1].next_sibling.contents[0].contents[0].split("/") 
+            hour = match_elements[3].contents[0].contents[1].text.replace("h", ":")
+            channel = match_elements[4].contents[0].attrs['alt']
             match_dict = {}
             match_dict['team1'] = {}
-            match_dict['team1']['name'] = team1_name
-            match_dict['team1']['flag-url'] = team1_flag_url
-            match_dict['team2'] = {}
-            match_dict['team2']['name'] = team2_name
-            match_dict['team2']['flag-url'] = team2_flag_url
-            match_dict['date'] = date_obj.strftime('%A %d %B %Y')
-            match_dict['hour'] = date_obj.strftime('%H:%M')
-            match_dict['game-details-url'] = game_details_url
-            match_dict['iso-datetime'] = new_date_string
-            match_dict['channel'] = channel[9:]
+            match_dict['team1']['name'] = teams[0].strip()
+            # match_dict['team1']['flag-url'] = ""
+            match_dict['team2'] = {}                    
+            match_dict['team2']['name'] = teams[1].strip()
+            # match_dict['team2']['flag-url'] = ""
+            match_dict['date'] = date
+            match_dict['hour'] = hour
+            match_dict['game-details-url'] = ""
+            match_dict['iso-datetime'] = ""
+            match_dict['channel'] = channel
+            
+            matchs_list.append(match_dict)
 
-            match_list.append(match_dict)
+            print(f"\n{date} à {hour} : \n{teams[0]} - {teams[1]}\nsur {channel}")
+        else:
+            pass
+    return matchs_list
 
-        # i+=1
-    return match_list
+def get_country_code_from_json(matchs_list):
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    json_path = os.path.join(current_dir, '..', 'data', 'countries-codes.json')
+
+    with open(json_path, 'r', encoding='utf-8') as file:
+        countries_json = json.load(file)
+    
+    for match in matchs_list:
+        country1 = match['team1']['name']
+        match['team1']['country-code'] = countries_json[country1]
+        country2 = match['team2']['name']
+        match['team2']['country-code'] = countries_json[country2]
+
+        print(f"\n{match}")
+
+
+    return matchs_list
+
+def set_flag_url(matchs_list):
+    for match in matchs_list:
+        team1_country_code = match['team1']['country-code']
+        team1_flag_url = f"https://flagcdn.com/w80/{team1_country_code.lower()}.png"
+        match['team1']['flag-url'] = team1_flag_url
+        team2_country_code = match['team2']['country-code']
+        team2_flag_url = f"https://flagcdn.com/w80/{team2_country_code.lower()}.png"
+        match['team2']['flag-url'] = team2_flag_url
+
+
+def export_matchs_list_to_json(matchs_list):
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    json_path = os.path.join(current_dir, '..', 'data', 'can-2024-huitiemes-matchs.json')
+    with open(json_path, 'w', encoding='utf-8') as file:
+        file.write(json.dumps(matchs_list, indent=4))
+
+
+def main():
+    site_content = get_site_content(CAN, TV_SPORTS_URL_BASE)
+    matchs_list = get_matchs_list(site_content)
+    matchs_list = get_country_code_from_json(matchs_list)
+    set_flag_url(matchs_list)
+    export_matchs_list_to_json(matchs_list)
+    input("press to finish")
 
 
 if __name__ == "__main__":
-    site_content = get_site_content(CAN)
-    match_list = get_match_list(site_content)
-    print(match_list)
+    main()

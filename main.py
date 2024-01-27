@@ -28,7 +28,7 @@ def main():
 
     #Paramétrage des créneaux d'envoi
     # dev_timeslots = ["00:01", "06:30", "15:56", "17:50", "18:40", "20:50"]
-    dev_timeslots = ["00:54"]
+    dev_timeslots = ["01:17"]
     run_timeslots = ["09:00"]
 
     message_body = customized_html
