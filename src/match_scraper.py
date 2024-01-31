@@ -42,7 +42,11 @@ def get_matchs_list(site_content):
             match_elements = element.contents
             teams = match_elements[0].contents[1].next_sibling.contents[0].contents[0].split("/") 
             hour = match_elements[3].contents[0].contents[1].text.replace("h", ":")
-            channel = match_elements[4].contents[0].attrs['alt']
+
+            try:
+                channel = match_elements[4].contents[0].attrs['alt']            
+            except:
+                channel = "Chaine inconnue pour le moment"
             match_dict = {}
             match_dict['team1'] = {}
             match_dict['team1']['name'] = teams[0].strip()
@@ -90,20 +94,20 @@ def set_flag_url(matchs_list):
         team2_flag_url = f"https://flagcdn.com/w80/{team2_country_code.lower()}.png"
         match['team2']['flag-url'] = team2_flag_url
 
-
-def export_matchs_list_to_json(matchs_list):
+def export_matchs_list_to_json(matchs_list, stage):
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    json_path = os.path.join(current_dir, '..', 'data', 'can-2024-huitiemes-matchs.json')
+    json_path = os.path.join(current_dir, '..', 'data', f"can-2024-{stage}-matchs.json")
     with open(json_path, 'w', encoding='utf-8') as file:
         file.write(json.dumps(matchs_list, indent=4))
 
 
 def main():
-    site_content = get_site_content(CAN, TV_SPORTS_URL_BASE)
+    stage = "quarts"
+    site_content = get_site_content(LIGUE1, TV_SPORTS_URL_BASE)
     matchs_list = get_matchs_list(site_content)
     matchs_list = get_country_code_from_json(matchs_list)
     set_flag_url(matchs_list)
-    export_matchs_list_to_json(matchs_list)
+    export_matchs_list_to_json(matchs_list, stage)
     input("press to finish")
 
 
