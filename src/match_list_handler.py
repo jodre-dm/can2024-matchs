@@ -1,4 +1,9 @@
 import json
+from datetime import datetime
+import locale
+
+locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
+today_date = datetime.now().strftime("%A %-d %B %Y")  
 
 
 class MatchListHandler:
@@ -13,3 +18,6 @@ class MatchListHandler:
         
     def get_match_list(self):
         return self.match_list
+    
+    def game_day(self):
+        return self.match_list[0]['date'] == today_date

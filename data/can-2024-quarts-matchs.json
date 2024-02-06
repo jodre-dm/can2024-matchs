@@ -1,0 +1,70 @@
+[
+    {
+        "team1": {
+            "name": "Nigeria",
+            "country-code": "NG",
+            "flag-url": "https://flagcdn.com/w80/ng.png"
+        },
+        "team2": {
+            "name": "Angola",
+            "country-code": "AO",
+            "flag-url": "https://flagcdn.com/w80/ao.png"
+        },
+        "date": "vendredi 02 f\u00e9vrier 2024",
+        "hour": "18:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 1"
+    },
+    {
+        "team1": {
+            "name": "RD Congo",
+            "country-code": "CD",
+            "flag-url": "https://flagcdn.com/w80/cd.png"
+        },
+        "team2": {
+            "name": "Guin\u00e9e",
+            "country-code": "GN",
+            "flag-url": "https://flagcdn.com/w80/gn.png"
+        },
+        "date": "vendredi 02 f\u00e9vrier 2024",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 1"
+    },
+    {
+        "team1": {
+            "name": "Mali",
+            "country-code": "ML",
+            "flag-url": "https://flagcdn.com/w80/ml.png"
+        },
+        "team2": {
+            "name": "C\u00f4te d'ivoire",
+            "country-code": "CI",
+            "flag-url": "https://flagcdn.com/w80/ci.png"
+        },
+        "date": "samedi 3 f\u00e9vrier 2024",
+        "hour": "18:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 1"
+    },
+    {
+        "team1": {
+            "name": "Cap Vert",
+            "country-code": "CV",
+            "flag-url": "https://flagcdn.com/w80/cv.png"
+        },
+        "team2": {
+            "name": "Afrique du Sud",
+            "country-code": "ZA",
+            "flag-url": "https://flagcdn.com/w80/za.png"
+        },
+        "date": "samedi 3 f\u00e9vrier 2024",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 1"
+    }
+]

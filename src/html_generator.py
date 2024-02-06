@@ -65,6 +65,23 @@ class HTMLGenerator:
         return html_content_with_events
 
 
+    def simple_html(self, imported_html):
+        imported_html = imported_html.replace("\n", "")
+        today_date = self.today        
+
+        #Paramétrage du style
+        font_family = "font-family : system-ui,-apple-system,'Segoe U',Roboto,'Helvetica Neue',Arial,'Noto Sans','Liberation Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';"
+        
+        #corps du mail
+        simple_mail_html = f"""
+                    <br />
+                    <h3 style="font-size: 1em;">{today_date}</h3>
+                    <p style="{font_family}"> Pas de match aujourd'hui :(</p>
+                    """
+        html_content_without_events = imported_html.replace("{match_details}",simple_mail_html)
+        return html_content_without_events
+
+
     def generate_html_file(self, customized_html):
         with open(f"generated/generated_html_email_{self.today}.html", "w", encoding="utf-8") as html_file:
             html_file.write(customized_html)

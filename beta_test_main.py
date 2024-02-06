@@ -8,7 +8,8 @@ hour = datetime.now().strftime("%H:%M")
 
 def main():
     #Import des matchs
-    match_list_source = "data/can-calendrier-poules.json"
+    # match_list_source = "data/can-calendrier-poules.json"
+    match_list_source = "data/can-2024-quarts-matchs.json"
     match_list_handler = MatchListHandler(match_list_source)
     match_list = match_list_handler.import_match_list()
 
@@ -26,7 +27,8 @@ def main():
     email_sender = EmailSender(credentials_source_file)
 
     #Paramétrage des créneaux d'envoi
-    dev_timeslots = ["00:01", "06:30", "14:53", "17:50", "18:40", "20:50"]
+    dev_timeslots = ["00:01", "06:30", "13:00", "17:50", "20:50"]
+    #dev_timeslots = ["01:17"]
     run_timeslots = ["09:00"]
 
     message_body = customized_html
@@ -54,9 +56,7 @@ def main():
             {'name':'Jean-Marc','email':'jean.marc.mukuta@gmail.com'},
             {'name':'Yves','email':'yves.mavindi@gmail.com'}
         ]
-    
-    else:
-        print("\nHeure en dehors des créneaux")
+
 
     try:
         if receivers:  # Vérifie si la liste n'est pas vide

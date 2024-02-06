@@ -40,29 +40,36 @@ def get_matchs_list(site_content):
             match_dict = {}
         elif element.name == "div":
             match_elements = element.contents
-            teams = match_elements[0].contents[1].next_sibling.contents[0].contents[0].split("/") 
-            hour = match_elements[3].contents[0].contents[1].text.replace("h", ":")
+            teams = match_elements[0].contents[1].next_sibling.contents[0].contents[0]
+            if "/" not in teams:
+                pass
+            else :
+                teams = match_elements[0].contents[1].next_sibling.contents[0].contents[0].split("/")
+                try:
+                    hour = match_elements[3].contents[0].contents[1].text.replace("h", ":")
+                except:
+                    hour = "heure inconnue pour le moment"
 
-            try:
-                channel = match_elements[4].contents[0].attrs['alt']            
-            except:
-                channel = "Chaine inconnue pour le moment"
-            match_dict = {}
-            match_dict['team1'] = {}
-            match_dict['team1']['name'] = teams[0].strip()
-            # match_dict['team1']['flag-url'] = ""
-            match_dict['team2'] = {}                    
-            match_dict['team2']['name'] = teams[1].strip()
-            # match_dict['team2']['flag-url'] = ""
-            match_dict['date'] = date
-            match_dict['hour'] = hour
-            match_dict['game-details-url'] = ""
-            match_dict['iso-datetime'] = ""
-            match_dict['channel'] = channel
-            
-            matchs_list.append(match_dict)
+                try:
+                    channel = match_elements[4].contents[0].attrs['alt']            
+                except:
+                    channel = "Chaine inconnue pour le moment"
+                match_dict = {}
+                match_dict['team1'] = {}
+                match_dict['team1']['name'] = teams[0].strip()
+                # match_dict['team1']['flag-url'] = ""
+                match_dict['team2'] = {}                    
+                match_dict['team2']['name'] = teams[1].strip()
+                # match_dict['team2']['flag-url'] = ""
+                match_dict['date'] = date
+                match_dict['hour'] = hour
+                match_dict['game-details-url'] = ""
+                match_dict['iso-datetime'] = ""
+                match_dict['channel'] = channel
+                
+                matchs_list.append(match_dict)
 
-            print(f"\n{date} à {hour} : \n{teams[0]} - {teams[1]}\nsur {channel}")
+                print(f"\n{date} à {hour} : \n{teams[0]} - {teams[1]}\nsur {channel}")
         else:
             pass
     return matchs_list
@@ -102,8 +109,8 @@ def export_matchs_list_to_json(matchs_list, stage):
 
 
 def main():
-    stage = "quarts"
-    site_content = get_site_content(LIGUE1, TV_SPORTS_URL_BASE)
+    stage = "demi-finales"
+    site_content = get_site_content(CAN, TV_SPORTS_URL_BASE)
     matchs_list = get_matchs_list(site_content)
     matchs_list = get_country_code_from_json(matchs_list)
     set_flag_url(matchs_list)

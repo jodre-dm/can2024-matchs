@@ -1,0 +1,36 @@
+[
+    {
+        "team1": {
+            "name": "Nigeria",
+            "country-code": "NG",
+            "flag-url": "https://flagcdn.com/w80/ng.png"
+        },
+        "team2": {
+            "name": "Afrique du Sud",
+            "country-code": "ZA",
+            "flag-url": "https://flagcdn.com/w80/za.png"
+        },
+        "date": "mercredi 7 f\u00e9vrier 2024",
+        "hour": "18:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 2"
+    },
+    {
+        "team1": {
+            "name": "C\u00f4te d'ivoire",
+            "country-code": "CI",
+            "flag-url": "https://flagcdn.com/w80/ci.png"
+        },
+        "team2": {
+            "name": "RD Congo",
+            "country-code": "CD",
+            "flag-url": "https://flagcdn.com/w80/cd.png"
+        },
+        "date": "mercredi 7 f\u00e9vrier 2024",
+        "hour": "21:00",
+        "game-details-url": "",
+        "iso-datetime": "",
+        "channel": "beIN SPORTS 2"
+    }
+]
