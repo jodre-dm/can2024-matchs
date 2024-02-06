@@ -14,32 +14,37 @@ hour = datetime.now().strftime("%H:%M")
 with open("config.json", "r") as config_file:
     config = json.load(config_file)
 
-admin_mode = config["admin-mode"]
-run_mode = config["run-mode"]
+ADMIN_MODE = config["admin-mode"]
+RUN_MODE = config["run-mode"]
+MATCH_LIST_SOURCE = config["match_list_source"]
+CREDENTIALS_SOURCE_FILE = config["credentials_source_file"]
+HTML_SOURCE_FILE = config["html_source_file"]
+ATTACHMENT_SOURCE = config["attachment_source"]
 
 
 def main():
-    match_list_source = config["match_list_source"]
+    match_list_source = MATCH_LIST_SOURCE
     match_list_handler = MatchListHandler(match_list_source)
     match_list = match_list_handler.import_match_list()
 
     #paramétrage du mail
-    credentials_source_file = config["credentials_source_file"]
+    credentials_source_file = CREDENTIALS_SOURCE_FILE 
     email_sender = EmailSender(credentials_source_file)
     sender = f"🌍 CAN 2024 🐘 🇨🇮 - Calendrier ⚽"    
-    attachment_source = config["attachment_source"]
+    attachment_source = ATTACHMENT_SOURCE
 
     #Création du contenu du mail
-    html_source_file = config["html_source_file"]
+    html_source_file = HTML_SOURCE_FILE
     html_generator = HTMLGenerator(html_source_file)
     imported_html = html_generator.import_html_email()
     customized_html = html_generator.custom_html(imported_html, match_list)
     simple_html = html_generator.simple_html(imported_html)
 
     #Paramétrage des créneaux d'envoi
-    dev_timeslots = hour
-    admin_timeslots = admin_mode["timeslots"]
-    run_timeslots = run_mode["timeslots"]
+    dev_timeslots = ""
+    # dev_timeslots = hour
+    admin_timeslots = ADMIN_MODE["timeslots"]
+    run_timeslots = RUN_MODE["timeslots"]
 
     is_game_day = match_list_handler.game_day()  #booléen qui indique si nous sommes un jour de match
 
@@ -53,16 +58,16 @@ def main():
 
         #Choix des destinataires en fonction de l'heure            
         if hour in admin_timeslots:
-            subject ="MODE ADMIN - Mail checking"
-            receivers = admin_mode["receivers"]
+            subject ="🔑 MODE ADMIN - 🔎 Mail checking"
+            receivers = ADMIN_MODE["receivers"]
 
         if hour in run_timeslots:
             subject ="Programme de la journée !"
-            receivers = run_mode["receivers"]
+            receivers = RUN_MODE["receivers"]
 
     if hour in dev_timeslots:
-        subject ="MODE DEV - Mail checking"
-        receivers = admin_mode["receivers"]
+        subject ="🔧 MODE DEV - Mail checking"
+        receivers = ADMIN_MODE["receivers"]
     
     #Envoi de l'email
     try:
