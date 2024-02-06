@@ -27,7 +27,7 @@ def main():
     match_list_handler = MatchListHandler(match_list_source)
     match_list = match_list_handler.import_match_list()
 
-    #paramétrage du mail
+    #paramétrage de l'expéditeur du mail
     credentials_source_file = CREDENTIALS_SOURCE_FILE 
     email_sender = EmailSender(credentials_source_file)
     sender = f"🌍 CAN 2024 🐘 🇨🇮 - Calendrier ⚽"    
@@ -74,10 +74,8 @@ def main():
         if receivers:  # Vérifie si la liste n'est pas vide
             for receiver in receivers:
                 email_sender.send_email(sender, subject, message_body, receiver, attachment_source)
-        else:
-            print("\nLa liste des destinataires est vide.")
     except Exception as e:
-        print(f"Une erreur s'est produite : {e}")
+        # print(f"Une erreur s'est produite : {e}")
         print("\nLa liste des destinataires est vide.\n")
 
 if __name__ == "__main__":
