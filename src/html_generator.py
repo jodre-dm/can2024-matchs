@@ -8,7 +8,7 @@ class HTMLGenerator:
 
     def __init__(self, html_source_file):
         self.html_source_file = html_source_file
-        self.today = datetime.now().strftime("%A %d %B %Y")
+        self.today = datetime.now().strftime("%A %-d %B %Y")
     
     def import_html_email(self):
         with open(self.html_source_file, 'r', encoding='utf-8') as html_file:
