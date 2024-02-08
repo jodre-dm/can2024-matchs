@@ -41,8 +41,8 @@ def main():
     simple_html = html_generator.simple_html(imported_html)
 
     #Paramétrage des créneaux d'envoi
-    dev_timeslots = ""
-    # dev_timeslots = hour
+    # dev_timeslots = ""
+    dev_timeslots = hour
     admin_timeslots = ADMIN_MODE["timeslots"]
     run_timeslots = RUN_MODE["timeslots"]
 
@@ -54,16 +54,16 @@ def main():
         
     else:
         message_body = customized_html        
-        html_generator.generate_html_file(customized_html) #Création du fichier html généré
-
-        #Choix des destinataires en fonction de l'heure            
-        if hour in admin_timeslots:
-            subject ="🔑 MODE ADMIN - 🔎 Mail checking"
-            receivers = ADMIN_MODE["receivers"]
+        html_generator.generate_html_file(customized_html) #Création du fichier html généré        
 
         if hour in run_timeslots:
             subject ="Programme de la journée !"
             receivers = RUN_MODE["receivers"]
+
+    #Choix des destinataires en fonction de l'heure            
+    if hour in admin_timeslots:
+        subject ="🔑 MODE ADMIN - 🔎 Mail checking"
+        receivers = ADMIN_MODE["receivers"]
 
     if hour in dev_timeslots:
         subject ="🔧 MODE DEV - Mail checking"
