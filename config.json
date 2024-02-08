@@ -1,5 +1,5 @@
 {
-    "match_list_source":"data/can-2024-demi-finales-matchs.json",
+    "match_list_source":"data/can-2024-dernier-carré-matchs.json",
     "html_source_file":"templates/email_template.html",
     "credentials_source_file":"credentials/app_password.json",
     "attachment_source":"",

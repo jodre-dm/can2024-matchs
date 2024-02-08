@@ -8,7 +8,7 @@ import locale
 
 locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
 today_date = datetime.now().strftime("%A %-d %B %Y")    
-hour = datetime.now().strftime("%H:%M")
+actual_hour = datetime.now().strftime("%H:%M")
 
 #Chargement du fichier de config
 with open("config.json", "r") as config_file:
@@ -41,8 +41,8 @@ def main():
     simple_html = html_generator.simple_html(imported_html)
 
     #Paramétrage des créneaux d'envoi
-    # dev_timeslots = ""
-    dev_timeslots = hour
+    dev_timeslots = ""
+    dev_timeslots = actual_hour
     admin_timeslots = ADMIN_MODE["timeslots"]
     run_timeslots = RUN_MODE["timeslots"]
 
@@ -56,16 +56,16 @@ def main():
         message_body = customized_html        
         html_generator.generate_html_file(customized_html) #Création du fichier html généré        
 
-        if hour in run_timeslots:
+        if actual_hour in run_timeslots:
             subject ="Programme de la journée !"
             receivers = RUN_MODE["receivers"]
 
     #Choix des destinataires en fonction de l'heure            
-    if hour in admin_timeslots:
+    if actual_hour in admin_timeslots:
         subject ="🔑 MODE ADMIN - 🔎 Mail checking"
         receivers = ADMIN_MODE["receivers"]
 
-    if hour in dev_timeslots:
+    if actual_hour in dev_timeslots:
         subject ="🔧 MODE DEV - Mail checking"
         receivers = ADMIN_MODE["receivers"]
     

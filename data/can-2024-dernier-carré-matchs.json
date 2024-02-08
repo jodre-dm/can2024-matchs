@@ -1,0 +1,32 @@
+[
+    {
+        "team1": {
+            "name": "Afrique du Sud",
+            "flag-url": "https://www.footmercato.net/build/images/flags-png/zaf.8b7b6852.png"
+        },
+        "team2": {
+            "name": "R\u00e9p. D\u00e9m. Congo",
+            "flag-url": "https://www.footmercato.net/build/images/flags-png/cod.09192755.png"
+        },
+        "date": "samedi 10 f\u00e9vrier 2024",
+        "hour": "21:00",
+        "game-details-url": "https://www.footmercato.net/live/8061554753666606746-afrique-du-sud-vs-rep-dem-congo",
+        "iso-datetime": "2024-02-10T21:00:00+01:00",
+        "channel": "beIN Sports 1HD"
+    },
+    {
+        "team1": {
+            "name": "Nigeria",
+            "flag-url": "https://www.footmercato.net/build/images/flags-png/nga.c404d351.png"
+        },
+        "team2": {
+            "name": "C\u00f4te d'Ivoire",
+            "flag-url": "https://www.footmercato.net/build/images/flags-png/civ.efc92db4.png"
+        },
+        "date": "dimanche 11 f\u00e9vrier 2024",
+        "hour": "21:00",
+        "game-details-url": "https://www.footmercato.net/live/4626328245060395905-nigeria-vs-cote-divoire",
+        "iso-datetime": "2024-02-11T21:00:00+01:00",
+        "channel": "beIN Sports 1HD"
+    }
+]

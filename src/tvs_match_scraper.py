@@ -6,8 +6,6 @@ import json
 import os
 
 
-sites_sources = {}
-
 TV_SPORTS_URL_BASE = "https://tv-sports.fr/foot/"
 
 CAN = "coupe-d-afrique-des-nations_tv/match-direct"
@@ -107,7 +105,6 @@ def export_matchs_list_to_json(matchs_list, stage):
     with open(json_path, 'w', encoding='utf-8') as file:
         file.write(json.dumps(matchs_list, indent=4))
 
-
 def main():
     stage = "demi-finales"
     site_content = get_site_content(CAN, TV_SPORTS_URL_BASE)
@@ -115,7 +112,6 @@ def main():
     matchs_list = get_country_code_from_json(matchs_list)
     set_flag_url(matchs_list)
     export_matchs_list_to_json(matchs_list, stage)
-    input("press to finish")
 
 
 if __name__ == "__main__":

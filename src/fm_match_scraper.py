@@ -2,23 +2,26 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 import locale
+import json
+import os
 
+
+FM_BASE_URL = f"https://www.footmercato.net/programme-tv/"
 
 CAN = "afrique/coupe-dafrique-des-nations"
 LIGUE1 = "france/ligue-1"
 CHAMPIONS_LEAGUE = "europe/ligue-des-champions-uefa"
-URL_BASE = f"https://www.footmercato.net/programme-tv/"
+
 
 # Définir la locale en français
 locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
 
 def get_site_content(competition):
-    url = f"{URL_BASE}{competition}"
+    url = f"{FM_BASE_URL}{competition}"
     response = requests.get(url)
     html = response.content
     site_content = BeautifulSoup(html, 'html.parser')
     return site_content
-
 
 def get_match_list(site_content):
     games = site_content.find_all('div', attrs={'matchBroadcast'})
@@ -65,8 +68,19 @@ def get_match_list(site_content):
         # i+=1
     return match_list
 
+def export_matchs_list_to_json(matchs_list, stage):
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    json_path = os.path.join(current_dir, '..', 'data', f"can-2024-{stage}-matchs.json")
+    with open(json_path, 'w', encoding='utf-8') as file:
+        file.write(json.dumps(matchs_list, indent=4))
+
+def main():
+    stage = "dernier-carré"
+    site_content = get_site_content(CAN)
+    matchs_list = get_match_list(site_content)
+    export_matchs_list_to_json(matchs_list, stage)
+    print(matchs_list)
+
 
 if __name__ == "__main__":
-    site_content = get_site_content(CAN)
-    match_list = get_match_list(site_content)
-    print(match_list)
+     main()
